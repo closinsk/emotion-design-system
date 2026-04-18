@@ -30,6 +30,9 @@
   }
 }
 
+/* Import design tokens (colors, spacing, typography) */
+@import './components/tokens/variables.css';
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;

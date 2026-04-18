@@ -1,0 +1,17 @@
+@import '../../tokens/variables.css';
+
+.eds-button {
+  padding: var(--space-seedling);
+  font-size: var(--font-size-sprout);
+  background: var(--fern-leaf-green);
+  color: var(--sunlight-petal);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.eds-button--secondary {
+  background: transparent;
+  color: var(--shadow-moss);
+  border: 1px solid rgba(0,0,0,0.08);
+}
