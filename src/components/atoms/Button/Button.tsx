@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.css';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'ghost';
 };
 
 export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', ...rest }) => (

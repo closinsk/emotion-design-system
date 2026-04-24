@@ -4,7 +4,7 @@ import './DownloadButton.css'
 export type DownloadButtonProps = {
   href: string
   download?: string
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'ghost'
   className?: string
   children: React.ReactNode
   ariaLabel?: string

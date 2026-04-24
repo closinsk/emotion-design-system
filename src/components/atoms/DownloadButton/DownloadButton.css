@@ -3,21 +3,56 @@
 .download-button {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sprout);
-  padding: var(--space-sprout) var(--space-shrub);
-  font-size: var(--font-size-shrub);
-  background: var(--brand-500);
-  color: var(--color-on-primary);
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--fs-base);
+  background: transparent;
+  color: var(--color-text-main);
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.download-button--primary {
+  background: var(--color-primary-base);
+  color: var(--color-on-primary);
+  border: 1px solid transparent;
+}
+
+.download-button--primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
 }
 
 .download-button--secondary {
   background: transparent;
-  color: var(--brand-500);
+  color: var(--color-primary-base);
   border: 1px solid var(--color-border);
+}
+
+.download-button--secondary:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.download-button--ghost {
+  background: transparent;
+  color: var(--color-text-main);
+  border: none;
+}
+
+.download-button--ghost:hover:not(:disabled) {
+  background: rgba(0,0,0,0.03);
+}
+
+.download-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(29,107,65,0.12);
+}
+
+.download-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .download-button__icon {

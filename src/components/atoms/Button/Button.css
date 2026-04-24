@@ -1,17 +1,56 @@
 @import '../../tokens/variables.css';
 
 .eds-button {
-  padding: var(--space-seedling);
-  font-size: var(--font-size-sprout);
-  background: var(--fern-leaf-green);
-  color: var(--sunlight-petal);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--fs-sm);
+  background: transparent;
+  color: var(--color-text-main);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.eds-button--primary {
+  background: var(--color-primary-base);
+  color: var(--color-on-primary);
+  border: 1px solid transparent;
+}
+
+.eds-button--primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
 }
 
 .eds-button--secondary {
   background: transparent;
-  color: var(--shadow-moss);
-  border: 1px solid rgba(0,0,0,0.08);
+  color: var(--color-primary-base);
+  border: 1px solid var(--color-border);
+}
+
+.eds-button--secondary:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.eds-button--ghost {
+  background: transparent;
+  color: var(--color-text-main);
+  border: none;
+}
+
+.eds-button--ghost:hover:not(:disabled) {
+  background: rgba(0,0,0,0.03);
+}
+
+.eds-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(29,107,65,0.12);
+}
+
+.eds-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

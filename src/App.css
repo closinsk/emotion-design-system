@@ -56,6 +56,34 @@
   }
 }
 
+.app__main {
+  padding: 48px 32px;
+}
+
+.app__heading {
+  font-size: var(--fs-xl);
+  margin: 0 0 8px 0;
+  color: var(--color-text-main);
+}
+
+.app__lead {
+  margin: 0 0 16px 0;
+  color: var(--color-text-muted);
+}
+
+.app__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 #center {
   display: flex;
   flex-direction: column;
