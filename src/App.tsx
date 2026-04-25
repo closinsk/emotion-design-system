@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Button from './components/atoms/Button'
 import DownloadButton from './components/atoms/DownloadButton'
+import Card from './components/molecules/Card'
+import CardNoImage from './components/molecules/Card/CardNoImage'
+import CardNoButton from './components/molecules/Card/CardNoButton'
+import CardWithImageAndButton from './components/molecules/Card/CardWithImageAndButton'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
@@ -15,6 +16,12 @@ function App() {
         <h1 className="app__heading">Emotion Design System — Demo</h1>
         <p className="app__lead">A small demo showcasing the `DownloadButton` atom.</p>
         <div className="app__controls">
+          <div className="button-row">
+            <CardNoImage />
+            <CardNoButton />
+            <CardWithImageAndButton />
+          </div>
+
           <div className="button-row">
             <Button variant="primary">Primary</Button>
             <Button variant="secondary">Secondary</Button>

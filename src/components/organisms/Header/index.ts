@@ -1,2 +1,2 @@
-// placeholder export for Header organism
-export * from './Header';
+// Header organism placeholder - no implementation yet
+export {}
