@@ -1,0 +1,70 @@
+@import '../../tokens/variables.css';
+
+.eds-feature-section {
+  width: 100%;
+  padding-top: var(--space-leafy);
+  padding-bottom: var(--space-leafy);
+}
+
+.eds-feature-section__split {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: stretch;
+  width: 100%;
+}
+
+.eds-feature-section__media {
+  flex: 1 1 50%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.eds-feature-section__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+/* Soft hover animation that feels like a gentle breeze */
+.eds-feature-section__media:hover .eds-feature-section__img {
+  transform: scale(1.03) translateY(-0.25rem);
+  filter: brightness(0.96);
+}
+
+.eds-feature-section__copy {
+  flex: 1 1 50%;
+  background: var(--sunlight-petal);
+  padding: var(--space-leafy);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eds-feature-section__title {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--fs-xl);
+  color: var(--deep-forest);
+}
+
+.eds-feature-section__text {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .eds-feature-section__split {
+    flex-direction: column;
+  }
+
+  .eds-feature-section__media,
+  .eds-feature-section__copy {
+    flex: none;
+    width: 100%;
+  }
+}
