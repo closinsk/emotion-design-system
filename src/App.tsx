@@ -2,7 +2,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Button from './components/atoms/Button'
 import DownloadButton from './components/atoms/DownloadButton'
-import Card from './components/molecules/Card'
+// Card import not used directly here; variants are rendered instead
 import CardNoImage from './components/molecules/Card/CardNoImage'
 import CardNoButton from './components/molecules/Card/CardNoButton'
 import CardWithImageAndButton from './components/molecules/Card/CardWithImageAndButton'
