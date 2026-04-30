@@ -3,6 +3,7 @@ import './App.css'
 import Button from './components/atoms/Button'
 import DownloadButton from './components/atoms/DownloadButton'
 import Navbar from './components/organisms/Navbar'
+import Hero from './components/organisms/Hero'
 // Card import not used directly here; variants are rendered instead
 import CardNoImage from './components/molecules/Card/CardNoImage'
 import CardNoButton from './components/molecules/Card/CardNoButton'
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Hero />
       <main className="app__main">
         <h1 className="app__heading">Emotion Design System — Demo</h1>
         <p className="app__lead">A small demo showcasing the `DownloadButton` atom.</p>

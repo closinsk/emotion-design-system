@@ -1,15 +1,23 @@
 @import '../../tokens/variables.css';
 
+
 .eds-navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-seedling);
   background: var(--succulent-green);
   color: var(--color-on-primary);
   font-family: var(--ff-sans);
   font-size: var(--font-size-sprout);
   box-shadow: var(--shadow-card);
+  /* vertical breathing room that matches site spacing scale */
+  padding-top: calc(var(--space-seedling) / 2);
+  padding-bottom: calc(var(--space-seedling) / 2);
+}
+
+.eds-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0; /* spacing handled by container */
+  box-sizing: border-box;
 }
 
 .eds-navbar__brand {
@@ -24,17 +32,33 @@
   display: flex;
   gap: var(--spacing-sm);
   align-items: center;
+  /* ensure links sit flush inside the container and don't overflow */
+  box-sizing: border-box;
 }
 
 .eds-navbar__link {
   color: var(--color-on-primary);
   text-decoration: none;
-  padding: calc(var(--spacing-xs) / 2) var(--spacing-xs);
+  /* use spacing scale for clickable area so edges line up with site content */
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
   transition: background 120ms ease, color 120ms ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 .eds-navbar__link:hover {
   background: var(--sunlight-petal);
   color: var(--deep-forest);
+}
+
+/* Shared centered container used across components */
+.eds-container {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-seedling);
+  padding-right: var(--space-seedling);
+  box-sizing: border-box;
 }
