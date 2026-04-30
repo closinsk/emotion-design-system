@@ -26,6 +26,16 @@
   --color-status-in-progress: #fbbf24; /* Amber/Yellow for 'In Progress' */
   --color-status-pending: #f87171;     /* Soft Red for 'Pending' */
 
+  /* --- Botanical aliases (organic names for common tokens) --- */
+  --succulent-green: var(--color-primary-base);
+  --deep-forest: var(--color-primary-dark);
+  --fern-leaf-green: var(--color-primary-light);
+  --sunlight-petal: var(--color-accent-soft);
+
+  /* Space & type with botanical naming */
+  --space-seedling: var(--spacing-sm);
+  --font-size-sprout: var(--fs-sm);
+
   /* Semantic aliases (recommended for component usage) */
   --color-success: var(--color-status-completed); /* use for positive/ok states */
   --color-warning: var(--color-status-in-progress); /* use for attention states */
