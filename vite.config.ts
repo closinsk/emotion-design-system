@@ -10,6 +10,6 @@ const base = isProd ? `/${repoName}/` : '/'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/emotion-design-system/',
+  base,
   plugins: [react()],
 })

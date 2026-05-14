@@ -2,8 +2,6 @@
 
 This repository contains the Emotion Design System — a thoughtfully curated set of tokens, components, and utilities designed to deliver consistent, accessible, and themable interfaces.
 
-This README is exhaustive: it documents tokens (with values), component APIs, theming and customization strategies, accessibility guidance, testing recommendations, and deployment flows (including GitHub Pages and an example GitHub Action).
-
 Table of contents
 - Overview
 - Quick start
