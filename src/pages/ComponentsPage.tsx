@@ -122,10 +122,178 @@ const TogglesDemo = () => (
 
 const CardsDemo = () => (
   <div className="component-block">
-    <h4>Card</h4>
-    <DemoStates demoClass="demo-card">
-      <div className="eds-demo-card">Image Card</div>
-    </DemoStates>
+    <h4>Cards</h4>
+
+    <div className="section-row">
+      <h5>Image variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--image-full">
+              <img src="/placeholder-400x160.png" alt="Placeholder" className="eds-card__image" />
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Full image</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--thumb-left">
+              <img src="/placeholder-80x80.png" alt="Thumb" className="eds-card__thumb" />
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Thumbnail left</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--no-image">
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">No image</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Content variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--no-image">
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Title only</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--no-image">
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Title + description</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--no-image">
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+                <div style={{ marginTop: 8 }}>
+                  <button className="eds-btn eds-btn--primary">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Title + desc + button</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>State variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card"> 
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Default</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box demo-card is-hover">
+            <div className="eds-card eds-card--hover"> 
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Hover</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--active"> 
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Active</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Layout variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--horizontal">
+              <img src="/placeholder-120x120.png" alt="Thumb" className="eds-card__thumb" />
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Horizontal</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--vertical">
+              <img src="/placeholder-160x90.png" alt="Image" className="eds-card__image" />
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Vertical</div>
+        </div>
+
+        <div className="button-variant">
+          <div className="demo-box">
+            <div className="eds-card eds-card--compact">
+              <div className="eds-card__body">
+                <h4>Card Title</h4>
+                <p>This is a short description.</p>
+              </div>
+            </div>
+          </div>
+          <div className="demo-label">Compact</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 )
 
