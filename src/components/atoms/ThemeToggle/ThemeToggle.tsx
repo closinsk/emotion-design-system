@@ -56,7 +56,7 @@ const ThemeToggle: React.FC = () => {
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 6 4 8 5 13s5 7 9 7 5-6 5-9-3-9-7-9z"/></svg>
           )}
         </span>
-        <span className="eds-theme-toggle__label">Theme:</span>
+        <span className="eds-theme-toggle__static-label">Theme</span>
         <span className="eds-theme-toggle__current-name">{options.find(o => o.value === theme)?.label ?? ''}</span>
         <span className="eds-theme-toggle__chev" aria-hidden>{open ? '▴' : '▾'}</span>
       </button>

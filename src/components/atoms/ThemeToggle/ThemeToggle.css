@@ -76,6 +76,8 @@ body {
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  /* Force dark text inside the button for visibility */
+  color: #1a1a1a;
 }
 
 .eds-theme-toggle__current-icon svg { width: 20px; height: 20px; fill: currentColor }
@@ -135,7 +137,10 @@ body {
 }
 
 :root[data-theme='green'] {
-  --color-bg-main: #eaf8ef; /* light green background */
-  --color-text-main: #0f3a2b; /* dark green text */
-  --succulent-green: var(--color-primary-base);
+  --color-bg-main: #1e4d2b; /* darker green background */
+  --color-text-main: #ffffff; /* white text for readability */
+  --succulent-green: #2d5a27;
 }
+
+/* Ensure the dropdown remains light even in green mode (menu forced to white earlier) */
+.eds-theme-toggle__menu { background: #ffffff; color: #111827 }
