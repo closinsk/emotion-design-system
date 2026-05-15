@@ -33,6 +33,31 @@
 .eds-input--focus { border-color: var(--deep-forest); box-shadow: 0 0 0 4px rgba(29,107,65,0.08); }
 .eds-input--disabled { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb }
 
+/* Color variants */
+.eds-btn--danger { background: #dc2626; color: #fff }
+.eds-btn--warning { background: #f59e0b; color: #071023 }
+.eds-btn--success { background: #86efac; color: #071023 }
+
+/* State helpers for demo (not actual CSS pseudo-states) */
+.eds-btn.is-hover { filter: brightness(1.05); transform: translateY(-2px) }
+.eds-btn.is-active { filter: brightness(0.95); transform: scale(0.985) }
+
+/* Loading */
+.eds-btn--loading { position: relative; display: inline-flex; align-items: center; gap: 8px }
+.spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.9); border-radius: 50%; animation: spin 800ms linear infinite }
+@keyframes spin { to { transform: rotate(360deg) } }
+
+/* Sizes */
+.eds-btn--sm { padding: 6px 10px; font-size: 0.875rem }
+.eds-btn--md { padding: 8px 14px; font-size: 1rem }
+.eds-btn--lg { padding: 12px 18px; font-size: 1.125rem }
+
+/* Icon helpers */
+.btn-icon { display: inline-flex; vertical-align: middle }
+.btn-icon.left { margin-right: 8px }
+.btn-icon.right { margin-left: 8px }
+.eds-btn--icon-only { padding: 8px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center }
+
 /* Demo specific styles */
 .demo-button button { padding: 8px 12px; border: none; background: var(--succulent-green); color: var(--color-on-primary); border-radius: 8px; cursor: pointer }
 .demo-button .is-hover button { filter: brightness(0.95) }

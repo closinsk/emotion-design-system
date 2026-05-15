@@ -87,31 +87,121 @@ const TypographyDemo = () => (
   </div>
 )
 
-const InputFieldDemo = () => (
+const IconLeft = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
+const IconRight = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 12H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
+const LoadingSpinner = () => (
+  <span className="spinner" aria-hidden></span>
+)
+
+const ButtonsDemo = () => (
   <div className="component-block">
-    <h4 style={{ color: 'var(--color-on-primary)' }}>Input Field</h4>
-    <div className="buttons-row">
-      <div className="button-variant">
-        <div className="demo-box">
-          <input className="eds-input" placeholder="Type something..." />
-        </div>
-        <div className="demo-label">Default</div>
-      </div>
+    <h4 style={{ color: 'var(--color-on-primary)' }}>Buttons</h4>
 
-      <div className="button-variant">
-        <div className="demo-box">
-          <input className="eds-input eds-input--focus" value="Focused state" readOnly />
+    <div className="section-row">
+      <h5>Color variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary">Primary</button></div>
+          <div className="demo-label">Primary</div>
         </div>
-        <div className="demo-label">Focus</div>
-      </div>
-
-      <div className="button-variant">
-        <div className="demo-box">
-          <input className="eds-input eds-input--disabled" placeholder="Disabled" disabled />
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--secondary">Secondary</button></div>
+          <div className="demo-label">Secondary</div>
         </div>
-        <div className="demo-label">Disabled</div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--danger">Danger</button></div>
+          <div className="demo-label">Danger</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--warning">Warning</button></div>
+          <div className="demo-label">Warning</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--success">Success</button></div>
+          <div className="demo-label">Success</div>
+        </div>
       </div>
     </div>
+
+    <div className="section-row">
+      <h5>State variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary">Default</button></div>
+          <div className="demo-label">Default</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary is-hover">Hover</button></div>
+          <div className="demo-label">Hover</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary is-active">Active</button></div>
+          <div className="demo-label">Active / Pressed</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--disabled" disabled>Disabled</button></div>
+          <div className="demo-label">Disabled</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary eds-btn--loading"> <LoadingSpinner/> Loading</button></div>
+          <div className="demo-label">Loading</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Size variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--sm eds-btn--primary">Small</button></div>
+          <div className="demo-label">Small</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--md eds-btn--primary">Medium</button></div>
+          <div className="demo-label">Medium</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--lg eds-btn--primary">Large</button></div>
+          <div className="demo-label">Large</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Icon variants</h5>
+      <div className="buttons-row">
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary"><span className="btn-icon left"><IconLeft/></span>With icon</button></div>
+          <div className="demo-label">Icon left</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary">With icon<span className="btn-icon right"><IconRight/></span></button></div>
+          <div className="demo-label">Icon right</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary eds-btn--icon-only"><IconLeft/></button></div>
+          <div className="demo-label">Icon only</div>
+        </div>
+        <div className="button-variant">
+          <div className="demo-box"><button className="eds-btn eds-btn--primary">Text only</button></div>
+          <div className="demo-label">Text only</div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
   </div>
 )
 
