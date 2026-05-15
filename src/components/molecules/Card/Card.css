@@ -55,6 +55,25 @@
 }
 .eds-card--image-large .eds-card__body { padding: 0 }
 
+/* Make the image card clickable: hover dim and overlay slide-up */
+.eds-card--image-large { position: relative; cursor: pointer }
+.eds-card--image-large .eds-card__media--large { transition: filter 180ms ease }
+.eds-card--image-large:hover .eds-card__media--large { filter: brightness(0.85) }
+
+.eds-card__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: transform 320ms cubic-bezier(.2,.9,.3,1);
+  background: rgba(30,77,43,0.85); /* dark green overlay */
+  padding: var(--spacing-md);
+  color: #fff;
+}
+.eds-card__overlay-inner { max-width: 100%; font-weight: 500 }
+.eds-card--image-large.is-overlay-visible .eds-card__overlay { transform: translateY(0) }
+
 /* Flippable card styles */
 .eds-card--flippable .eds-card__flip {
   position: relative;
