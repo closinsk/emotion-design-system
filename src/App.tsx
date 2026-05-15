@@ -9,6 +9,7 @@ import ThemeToggle from './components/atoms/ThemeToggle'
 import TextStyleToggle from './components/atoms/TextStyleToggle/TextStyleToggle'
 function App() {
   const [page, setPage] = useState<'home'|'components'|'docs'|'tokens'>('home')
+  const [overlayVisible, setOverlayVisible] = useState(false)
 
   return (
     <>
@@ -23,36 +24,28 @@ function App() {
           <main className="app__main">
             <div className="eds-card-column eds-container" style={{ marginTop: 24 }}>
               <div className="eds-card-column__item">
-                {(() => {
-                  const [overlayVisible, setOverlayVisible] = useState(false)
-                  const toggle = () => setOverlayVisible((v) => !v)
-                  const onKey = (e: React.KeyboardEvent) => {
+                <div
+                  className={`eds-card eds-card--image-large ${overlayVisible ? 'is-overlay-visible' : ''}`}
+                  onClick={() => setOverlayVisible((v) => !v)}
+                  onKeyDown={(e: React.KeyboardEvent) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      toggle()
+                      setOverlayVisible((v) => !v)
                     }
-                  }
-
-                  return (
-                    <div
-                      className={`eds-card eds-card--image-large ${overlayVisible ? 'is-overlay-visible' : ''}`}
-                      onClick={toggle}
-                      onKeyDown={onKey}
-                      role="button"
-                      tabIndex={0}
-                      aria-pressed={overlayVisible}
-                    >
-                      <img
-                        className="eds-card__media eds-card__media--large"
-                        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80"
-                        alt="Nature"
-                      />
-                      <div className="eds-card__overlay" aria-hidden={!overlayVisible}>
-                        <div className="eds-card__overlay-inner">Rooted in Nature — Every leaf, every line, designed with intention.</div>
-                      </div>
-                    </div>
-                  )
-                })()}
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={overlayVisible}
+                >
+                  <img
+                    className="eds-card__media eds-card__media--large"
+                    src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80"
+                    alt="Nature"
+                  />
+                  <div className="eds-card__overlay" aria-hidden={!overlayVisible}>
+                    <div className="eds-card__overlay-inner">Rooted in Nature — Every leaf, every line, designed with intention.</div>
+                  </div>
+                </div>
               </div>
               <div className="eds-card-column__item">
                 <div className="eds-card eds-card--image-large">
