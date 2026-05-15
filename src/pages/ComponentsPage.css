@@ -111,6 +111,10 @@
 
 .components-page .cards-demo .section-row { margin-bottom: 24px }
 
+/* Ensure cards render in normal flow and don't layer on top of each other */
+.components-page .cards-demo .demo-box { position: relative; overflow: visible }
+.components-page .cards-demo .eds-card { position: relative; z-index: 0 }
+
 @media (max-width: 900px) {
 	.cards-demo .buttons-row { grid-template-columns: repeat(2, minmax(180px, 1fr)) }
 }
