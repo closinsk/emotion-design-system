@@ -45,7 +45,7 @@ const ThemeToggle: React.FC = () => {
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        aria-label="Open theme menu"
+        aria-label={`Theme menu, current ${options.find(o => o.value === theme)?.label ?? ''}`}
       >
         <span className="eds-theme-toggle__current-icon" aria-hidden>
           {theme === 'dark' ? (
@@ -53,9 +53,11 @@ const ThemeToggle: React.FC = () => {
           ) : theme === 'light' ? (
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/></svg>
           ) : (
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C10 6 8 6 6 9s-3 5 1 9 8 4 11 1 1-8-6-17z"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 6 4 8 5 13s5 7 9 7 5-6 5-9-3-9-7-9z"/></svg>
           )}
         </span>
+        <span className="eds-theme-toggle__label">Theme:</span>
+        <span className="eds-theme-toggle__current-name">{options.find(o => o.value === theme)?.label ?? ''}</span>
         <span className="eds-theme-toggle__chev" aria-hidden>{open ? '▴' : '▾'}</span>
       </button>
 

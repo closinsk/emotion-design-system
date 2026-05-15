@@ -83,8 +83,10 @@ body {
 
 .eds-theme-toggle__menu {
   margin-top: 8px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  /* Keep dropdown light so text remains readable regardless of page theme */
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid rgba(16,24,40,0.06);
   border-radius: 8px;
   box-shadow: var(--shadow-card);
   padding: 6px;
@@ -115,6 +117,9 @@ body {
 .eds-theme-toggle__menu-check { color: var(--succulent-green); font-weight: 700 }
 
 .eds-theme-toggle__menu-item--selected { background: rgba(29,107,65,0.06) }
+
+/* Ensure menu text and icons inherit our forced dark color */
+.eds-theme-toggle__menu, .eds-theme-toggle__menu * { color: #111827 }
 
 /* Theme variations */
 :root[data-theme='light'] {
