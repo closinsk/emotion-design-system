@@ -104,6 +104,7 @@
 	gap: 24px !important;
 	padding: 24px 0 !important;
 	align-items: flex-start;
+	align-content: flex-start; /* ensure rows align at top and reserve vertical space */
 }
 
 .components-page .cards-demo .button-variant { display: flex; flex-direction: column; gap: 8px; align-items: stretch }
@@ -129,6 +130,11 @@
 .components-page .cards-demo .eds-card { display: flex; flex-direction: column; justify-content: flex-start }
 
 .components-page .cards-demo .section-row { margin-bottom: 24px }
+
+/* make sure section headings don't overlap the card rows */
+.components-page .cards-demo h5 { margin: 0 0 12px 0 }
+
+.components-page .cards-demo .button-variant { min-height: 150px }
 
 /* Ensure cards render in normal flow and don't layer on top of each other */
 .components-page .cards-demo .demo-box { position: relative; overflow: visible }
