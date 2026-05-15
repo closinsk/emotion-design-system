@@ -34,10 +34,29 @@ const DemoStates: React.FC<{ children: React.ReactNode; demoClass?: string }> = 
 
 const ButtonsDemo = () => (
   <div className="component-block">
-    <h4>Button</h4>
-    <DemoStates demoClass="demo-button">
-      <button className="eds-demo-btn">Primary</button>
-    </DemoStates>
+    <h4 style={{ color: 'var(--color-on-primary)' }}>Buttons</h4>
+    <div className="buttons-row">
+      <div className="button-variant">
+        <div className="demo-box demo-button">
+          <button className="eds-btn eds-btn--primary">Primary</button>
+        </div>
+        <div className="demo-label">Primary</div>
+      </div>
+
+      <div className="button-variant">
+        <div className="demo-box demo-button">
+          <button className="eds-btn eds-btn--secondary">Secondary</button>
+        </div>
+        <div className="demo-label">Secondary</div>
+      </div>
+
+      <div className="button-variant">
+        <div className="demo-box demo-button">
+          <button className="eds-btn eds-btn--disabled" disabled>Disabled</button>
+        </div>
+        <div className="demo-label">Disabled</div>
+      </div>
+    </div>
   </div>
 )
 
