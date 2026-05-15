@@ -14,11 +14,7 @@ function App() {
       <FeatureSection />
       <main className="app__main">
         <h1 className="app__heading">Emotion Design System — Demo</h1>
-        <div className="app__controls">
-          <div className="button-row">
-            <Button variant="ghost">Ghost</Button>
-          </div>
-        </div>
+        
       </main>
     </>
   )
