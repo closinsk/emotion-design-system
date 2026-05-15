@@ -3,32 +3,6 @@ import './ComponentsPage.css'
 
 const categories = ['Buttons', 'Toggles', 'Cards', 'Typography', 'Input Field']
 
-const DemoStates: React.FC<{ children: React.ReactNode; demoClass?: string }> = ({ children, demoClass }) => {
-  const [active, setActive] = useState(false)
-  return (
-    <div className="demo-states">
-      <div className="demo-item">
-        <div className={`demo-box ${demoClass ?? ''}`}>{children}</div>
-        <div className="demo-label">Default</div>
-      </div>
-      <div className="demo-item">
-        <div className={`demo-box ${demoClass ?? ''} is-hover`}>{children}</div>
-        <div className="demo-label">Hover</div>
-      </div>
-      <div className="demo-item">
-        <div
-          className={`demo-box ${demoClass ?? ''} ${active ? 'is-active' : ''}`}
-          onClick={() => setActive((v) => !v)}
-          role="button"
-          tabIndex={0}
-        >
-          {children}
-        </div>
-        <div className="demo-label">Active / Click</div>
-      </div>
-    </div>
-  )
-}
 
 const ToggleControl: React.FC<{
   size?: 'sm' | 'md' | 'lg'
@@ -271,7 +245,6 @@ const LoadingSpinner = () => (
 )
 
 const InputFieldDemo = () => {
-  const [value, setValue] = useState('')
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
