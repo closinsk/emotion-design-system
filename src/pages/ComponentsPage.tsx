@@ -34,12 +34,89 @@ const DemoStates: React.FC<{ children: React.ReactNode; demoClass?: string }> = 
 
 
 
+const ToggleControl: React.FC<{
+  size?: 'sm' | 'md' | 'lg'
+  color?: 'green' | 'blue' | 'red' | 'yellow'
+  initial?: boolean
+  disabled?: boolean
+  label?: string | null
+  labelPosition?: 'left' | 'right' | 'none'
+  showIndicator?: boolean
+}> = ({ size = 'md', color = 'green', initial = false, disabled = false, label = null, labelPosition = 'right', showIndicator = false }) => {
+  const [on, setOn] = useState(initial)
+  const handleClick = () => { if (disabled) return; setOn((v) => !v) }
+
+  const cls = `toggle toggle--${size} toggle--${color} ${on ? 'toggle--on' : ''} ${disabled ? 'toggle--disabled' : ''}`
+
+  const inner = (
+    <div className={cls} role="switch" aria-checked={on} onClick={handleClick} tabIndex={disabled ? -1 : 0}>
+      <div className="toggle-track">
+        <div className="toggle-thumb" />
+      </div>
+      {showIndicator && <div className="toggle-indicator">{on ? 'On' : 'Off'}</div>}
+    </div>
+  )
+
+  return (
+    <div className="button-variant">
+      <div className={`demo-box demo-toggle ${disabled ? 'is-disabled' : ''}`}>
+        {label && labelPosition === 'left' && <div className="toggle-label left">{label}</div>}
+        {inner}
+        {label && labelPosition === 'right' && <div className="toggle-label right">{label}</div>}
+      </div>
+      <div className="demo-label">{label ?? (disabled ? 'Disabled' : on ? 'On' : 'Off')}</div>
+    </div>
+  )
+}
+
 const TogglesDemo = () => (
   <div className="component-block">
-    <h4>Toggle</h4>
-    <DemoStates demoClass="demo-toggle">
-      <button className="eds-demo-toggle">On</button>
-    </DemoStates>
+    <h4>Toggles</h4>
+
+    <div className="section-row">
+      <h5>State variants</h5>
+      <div className="buttons-row">
+        <ToggleControl initial={false} label="Default" />
+        <div className="button-variant">
+          <div className="demo-box demo-toggle is-hover">
+            <ToggleControl initial={false} />
+          </div>
+          <div className="demo-label">Hover</div>
+        </div>
+        <ToggleControl initial={true} label="Active / On" />
+        <ToggleControl initial={false} disabled label={"Disabled"} />
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Size variants</h5>
+      <div className="buttons-row">
+        <ToggleControl size="sm" initial={false} label="Small" />
+        <ToggleControl size="md" initial={true} label="Medium" />
+        <ToggleControl size="lg" initial={false} label="Large" />
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Color variants</h5>
+      <div className="buttons-row">
+        <ToggleControl color="green" initial={true} label="Green" />
+        <ToggleControl color="blue" initial={true} label="Blue" />
+        <ToggleControl color="red" initial={true} label="Red" />
+        <ToggleControl color="yellow" initial={true} label="Yellow" />
+      </div>
+    </div>
+
+    <div className="section-row">
+      <h5>Label variants</h5>
+      <div className="buttons-row">
+        <ToggleControl label="Left label" labelPosition="left" initial={true} />
+        <ToggleControl label="Right label" labelPosition="right" initial={false} />
+        <ToggleControl label={null} labelPosition="none" initial={true} />
+        <ToggleControl showIndicator initial={true} label={null} />
+      </div>
+    </div>
+
   </div>
 )
 
