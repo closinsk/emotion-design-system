@@ -1,5 +1,4 @@
 import './App.css'
-import Button from './components/atoms/Button'
 import Navbar from './components/organisms/Navbar'
 import Hero from './components/organisms/Hero'
 import FeatureSection from './components/organisms/FeatureSection'
