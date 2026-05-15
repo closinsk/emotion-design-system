@@ -13,8 +13,6 @@ function App() {
       <Hero />
       <FeatureSection />
       <main className="app__main">
-        <h1 className="app__heading">Emotion Design System — Demo</h1>
-        
       </main>
     </>
   )
