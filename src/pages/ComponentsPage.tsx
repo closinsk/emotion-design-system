@@ -70,7 +70,7 @@ const ToggleControl: React.FC<{
 }
 
 const TogglesDemo = () => (
-  <div className="component-block">
+  <div className="component-block cards-demo">
     <h4>Toggles</h4>
 
     <div className="section-row">
