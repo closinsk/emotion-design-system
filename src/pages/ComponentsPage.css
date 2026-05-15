@@ -113,7 +113,7 @@
 /* Explicit per-card sizing and spacing to avoid overlap */
 .components-page .cards-demo .eds-card {
 	width: 100% !important;
-	min-height: 150px !important;
+	min-height: 220px !important;
 	/* removed margin to rely on flex gap */
 	padding: 16px !important;
 	border: 1px solid #ccc !important;
@@ -134,7 +134,7 @@
 /* make sure section headings don't overlap the card rows */
 .components-page .cards-demo h5 { margin: 0 0 12px 0 }
 
-.components-page .cards-demo .button-variant { min-height: 150px }
+.components-page .cards-demo .button-variant { min-height: 220px }
 
 /* Ensure cards render in normal flow and don't layer on top of each other */
 .components-page .cards-demo .demo-box { position: relative; overflow: visible }
