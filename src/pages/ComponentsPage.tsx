@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ComponentsPage.css'
 
-const categories = ['Buttons', 'Toggles', 'Cards', 'Typography']
+const categories = ['Buttons', 'Toggles', 'Cards', 'Typography', 'Input Field']
 
 const DemoStates: React.FC<{ children: React.ReactNode; demoClass?: string }> = ({ children, demoClass }) => {
   const [active, setActive] = useState(false)
@@ -87,6 +87,34 @@ const TypographyDemo = () => (
   </div>
 )
 
+const InputFieldDemo = () => (
+  <div className="component-block">
+    <h4 style={{ color: 'var(--color-on-primary)' }}>Input Field</h4>
+    <div className="buttons-row">
+      <div className="button-variant">
+        <div className="demo-box">
+          <input className="eds-input" placeholder="Type something..." />
+        </div>
+        <div className="demo-label">Default</div>
+      </div>
+
+      <div className="button-variant">
+        <div className="demo-box">
+          <input className="eds-input eds-input--focus" value="Focused state" readOnly />
+        </div>
+        <div className="demo-label">Focus</div>
+      </div>
+
+      <div className="button-variant">
+        <div className="demo-box">
+          <input className="eds-input eds-input--disabled" placeholder="Disabled" disabled />
+        </div>
+        <div className="demo-label">Disabled</div>
+      </div>
+    </div>
+  </div>
+)
+
 const ComponentsPage: React.FC = () => {
   const [selected, setSelected] = useState('Buttons')
 
@@ -101,6 +129,8 @@ const ComponentsPage: React.FC = () => {
         return <CardsDemo />
       case 'Typography':
         return <TypographyDemo />
+      case 'Input Field':
+        return <InputFieldDemo />
       default:
         return null
     }

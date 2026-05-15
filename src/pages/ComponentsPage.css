@@ -28,6 +28,11 @@
 .eds-btn--secondary { background: transparent; color: var(--deep-forest); border: 2px solid rgba(29,107,65,0.12) }
 .eds-btn--disabled { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb; cursor: not-allowed }
 
+/* Input field demos */
+.eds-input { padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); width: 200px; background: var(--color-surface) }
+.eds-input--focus { border-color: var(--deep-forest); box-shadow: 0 0 0 4px rgba(29,107,65,0.08); }
+.eds-input--disabled { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb }
+
 /* Demo specific styles */
 .demo-button button { padding: 8px 12px; border: none; background: var(--succulent-green); color: var(--color-on-primary); border-radius: 8px; cursor: pointer }
 .demo-button .is-hover button { filter: brightness(0.95) }
