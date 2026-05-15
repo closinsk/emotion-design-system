@@ -5,12 +5,14 @@ import Navbar from './components/organisms/Navbar'
 import Hero from './components/organisms/Hero'
 import FeatureSection from './components/organisms/FeatureSection'
 import ThemeToggle from './components/atoms/ThemeToggle'
+import TextStyleToggle from './components/atoms/TextStyleToggle/TextStyleToggle'
 function App() {
  
   return (
     <>
       <Navbar />
       <ThemeToggle />
+      <TextStyleToggle />
       <Hero />
       <FeatureSection />
       <main className="app__main">

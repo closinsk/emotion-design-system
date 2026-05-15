@@ -16,7 +16,17 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  /* Font toggles: default uses page variables; serif and mono provided for data-font attribute */
 
+
+/* Apply font family when data-font attribute is set on the root element */
+:root[data-font='serif'] {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+:root[data-font='mono'] {
+  font-family: 'Courier New', Courier, monospace;
+}
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
