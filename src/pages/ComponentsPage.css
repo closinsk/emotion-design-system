@@ -3,7 +3,6 @@
 .components-page { padding: 32px 0 }
 .components-layout { display: flex; gap: 24px; align-items: flex-start }
 
-
 .components-sidebar { width: 220px; background: var(--succulent-green); padding: 16px; border-radius: 12px }
 .components-sidebar ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px }
 .components-sidebar button { width: 100%; text-align: left; padding: 12px 14px; border-radius: 8px; border: 1px solid transparent; background: transparent; cursor: pointer; color: var(--color-on-primary); font-weight: 600 }
@@ -14,163 +13,70 @@
 .components-grid { display: grid; gap: 16px }
 .component-block { background: var(--color-surface); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--color-border) }
 
+.section-row { margin-bottom: 24px }
+.section-row h5 { margin: 0 0 12px 0; color: var(--deep-forest) }
+
+/* Demo states */
 .demo-states { display: flex; gap: 12px; align-items: flex-start }
 .demo-item { display: flex; flex-direction: column; gap: 8px; align-items: center }
-.demo-box { width: 160px; height: 56px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-surface); transition: transform 160ms ease, box-shadow 160ms ease }
-.demo-box.is-hover { transform: translateY(-4px); box-shadow: var(--shadow-card) }
-.demo-box.is-active { transform: translateY(0); box-shadow: none; outline: 2px solid rgba(29,107,65,0.12) }
 .demo-label { font-size: 12px; color: var(--color-text-muted) }
 
-.buttons-row { display: flex; gap: 20px; align-items: center }
+/* Demo box — default for buttons/toggles */
+.demo-box { width: 200px; height: 56px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-surface); transition: transform 160ms ease, box-shadow 160ms ease, margin-right 16px }
+.demo-box.is-hover { transform: translateY(-4px); box-shadow: var(--shadow-card) }
+.demo-box.is-active { transform: translateY(0); box-shadow: none; outline: 2px solid rgba(29,107,65,0.12) }
+
+/* Buttons layout */
+.buttons-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; padding: 16px 0 }
 .button-variant { display: flex; flex-direction: column; align-items: center; gap: 8px }
+
+/* Button styles */
 .eds-btn { padding: 8px 14px; border-radius: 10px; font-weight: 600; cursor: pointer }
 .eds-btn--primary { background: var(--deep-forest); color: var(--color-on-primary); border: none }
 .eds-btn--secondary { background: transparent; color: var(--deep-forest); border: 2px solid rgba(29,107,65,0.12) }
 .eds-btn--disabled { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb; cursor: not-allowed }
-
-/* Input field demos */
-.eds-input { padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); width: 200px; background: var(--color-surface) }
-.eds-input--focus { border-color: var(--deep-forest); box-shadow: 0 0 0 4px rgba(29,107,65,0.08); }
-.eds-input--disabled { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb }
-
-/* Color variants */
-.eds-btn--danger { background: #dc2626; color: #fff }
-.eds-btn--warning { background: #f59e0b; color: #071023 }
-.eds-btn--success { background: #86efac; color: #071023 }
-
-/* State helpers for demo (not actual CSS pseudo-states) */
+.eds-btn--danger { background: #dc2626; color: #fff; border: none }
+.eds-btn--warning { background: #f59e0b; color: #071023; border: none }
+.eds-btn--success { background: #86efac; color: #071023; border: none }
 .eds-btn.is-hover { filter: brightness(1.05); transform: translateY(-2px) }
 .eds-btn.is-active { filter: brightness(0.95); transform: scale(0.985) }
-
-/* Loading */
 .eds-btn--loading { position: relative; display: inline-flex; align-items: center; gap: 8px }
-.spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.9); border-radius: 50%; animation: spin 800ms linear infinite }
-@keyframes spin { to { transform: rotate(360deg) } }
-
-/* Sizes */
 .eds-btn--sm { padding: 6px 10px; font-size: 0.875rem }
 .eds-btn--md { padding: 8px 14px; font-size: 1rem }
 .eds-btn--lg { padding: 12px 18px; font-size: 1.125rem }
-
-/* Icon helpers */
+.eds-btn--icon-only { padding: 8px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center }
 .btn-icon { display: inline-flex; vertical-align: middle }
 .btn-icon.left { margin-right: 8px }
 .btn-icon.right { margin-left: 8px }
-.eds-btn--icon-only { padding: 8px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center }
 
-/* Demo specific styles */
-.demo-button button { padding: 8px 12px; border: none; background: var(--succulent-green); color: var(--color-on-primary); border-radius: 8px; cursor: pointer }
-.demo-button .is-hover button { filter: brightness(0.95) }
-.demo-button .is-active button { transform: scale(0.98) }
+/* Spinner */
+.spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.9); border-radius: 50%; animation: spin 800ms linear infinite }
+@keyframes spin { to { transform: rotate(360deg) } }
 
-.demo-toggle button { padding: 6px 10px; border-radius: 9999px; background: linear-gradient(90deg, #eaf8f0, #d6f0e0); border: 1px solid rgba(29,107,65,0.08); cursor: pointer }
+/* Input field */
+.eds-input { padding: 8px 12px; border-radius: 8px; border: 1px solid var(--color-border); width: 200px; background: var(--color-surface) }
+.eds-input--focus { border-color: var(--deep-forest); box-shadow: 0 0 0 4px rgba(29,107,65,0.08) }
+.eds-input--disabled { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb }
 
-.demo-card .eds-demo-card { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg,#cfead8,#a9d7b8); color: var(--deep-forest); border-radius: 8px }
-
-.demo-typography p { margin: 0 }
-
-/* Card demo styles */
-.eds-card { width: 280px; border-radius: 10px; overflow: hidden; background: linear-gradient(180deg,#f8faf8,#f0fbf5); border: 1px solid rgba(29,107,65,0.06); display: block }
-.eds-card__image { width: 100%; height: 160px; object-fit: cover; display: block }
-.eds-card__thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 12px }
-.eds-card__body { padding: 12px; color: var(--deep-forest) }
-.eds-card__body h4 { margin: 0 0 6px 0; font-size: 1rem }
-.eds-card__body p { margin: 0; font-size: 0.9rem; color: #234427 }
-
-.eds-card--image-full { }
-.eds-card--thumb-left { display: flex; align-items: center; padding: 12px }
-.eds-card--thumb-left .eds-card__body { padding: 0 }
-.eds-card--no-image .eds-card__body { padding: 16px }
-
-.eds-card--hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(20,80,40,0.08); border-color: rgba(29,107,65,0.12) }
-.eds-card--active { transform: translateY(2px); border-color: rgba(29,107,65,0.18); box-shadow: none }
-
-.eds-card--horizontal { display: flex; gap: 12px; align-items: center; padding: 12px }
-.eds-card--horizontal .eds-card__thumb { width: 120px; height: 120px }
-
-.eds-card--vertical { }
-.eds-card--compact { width: 220px }
-.eds-card--compact .eds-card__body { padding: 8px }
-.eds-card--compact .eds-card__body h4 { font-size: 0.95rem }
-.eds-card--compact .eds-card__body p { font-size: 0.8rem }
-
-.demo-box .eds-card img { display: block }
-
-/* Cards layout grid overrides to prevent overlap */
-.components-page .cards-demo .buttons-row {
-	/* Use a wrapping flex container so each card has explicit sizing and spacing */
-	display: flex !important;
-	flex-wrap: wrap !important;
-	gap: 24px !important;
-	padding: 24px 0 !important;
-	align-items: flex-start;
-	align-content: flex-start; /* ensure rows align at top and reserve vertical space */
-}
-
-.components-page .cards-demo .button-variant { display: flex; flex-direction: column; gap: 8px; align-items: stretch; width: 200px; flex: 0 0 auto; margin: 0 }
-.components-page .cards-demo .demo-box { width: auto; height: auto; padding: 0; display: block; align-items: stretch; justify-content: center; position: static !important; overflow: visible }
-
-/* Explicit per-card sizing and spacing to avoid overlap */
-.components-page .cards-demo .eds-card {
-	width: 100% !important;
-	min-height: 220px !important;
-	/* removed margin to rely on flex gap */
-	padding: 16px !important;
-	border: 1px solid #ccc !important;
-	border-radius: 8px !important;
-	box-sizing: border-box !important;
-	position: static !important;
-	z-index: auto !important;
-	background: linear-gradient(180deg,#f8faf8,#f0fbf5);
-}
-.components-page .cards-demo .eds-card__body { padding: 0 }
-
-/* Ensure each card behaves as a block in the flex-wrap container */
-.components-page .cards-demo .button-variant { flex: 0 0 auto }
-.components-page .cards-demo .eds-card { display: flex; flex-direction: column; justify-content: flex-start }
-
-.components-page .cards-demo .section-row { margin-bottom: 24px }
-
-/* make sure section headings don't overlap the card rows */
-.components-page .cards-demo h5 { margin: 0 0 12px 0 }
-
-.components-page .cards-demo .button-variant { min-height: 220px }
-
-/* Ensure cards render in normal flow and don't layer on top of each other */
-.components-page .cards-demo .demo-box { position: relative; overflow: visible }
-.components-page .cards-demo .eds-card { position: relative; z-index: 0 }
-
-@media (max-width: 900px) {
-	.cards-demo .buttons-row { grid-template-columns: repeat(2, minmax(180px, 1fr)) }
-}
-@media (max-width: 560px) {
-	.cards-demo .buttons-row { grid-template-columns: 1fr }
-}
-
-
-/* Toggle styles for Components demo */
+/* Toggle styles */
 .toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer }
 .toggle-track { width: 44px; height: 24px; background: linear-gradient(90deg,#eaf8f0,#d6f0e0); border-radius: 9999px; padding: 3px; box-sizing: border-box; position: relative; border: 1px solid rgba(29,107,65,0.08); transition: background 160ms ease, box-shadow 160ms ease }
 .toggle-thumb { width: 18px; height: 18px; background: #fff; border-radius: 50%; box-shadow: 0 1px 2px rgba(0,0,0,0.08); transition: transform 160ms ease }
 .toggle-indicator { margin-left: 8px; font-size: 12px; color: var(--deep-forest); font-weight: 600 }
-
 .toggle--sm .toggle-track { width: 34px; height: 18px; padding: 2px }
 .toggle--sm .toggle-thumb { width: 14px; height: 14px }
 .toggle--md .toggle-track { width: 44px; height: 24px }
 .toggle--md .toggle-thumb { width: 18px; height: 18px }
 .toggle--lg .toggle-track { width: 60px; height: 32px; padding: 4px }
 .toggle--lg .toggle-thumb { width: 24px; height: 24px }
-
 .toggle { --tx-sm: 14px; --tx-md: 20px; --tx-lg: 28px }
 .toggle--sm.toggle--on .toggle-thumb { transform: translateX(var(--tx-sm)) }
 .toggle--md.toggle--on .toggle-thumb { transform: translateX(var(--tx-md)) }
 .toggle--lg.toggle--on .toggle-thumb { transform: translateX(var(--tx-lg)) }
-
 .toggle--on .toggle-track { background: var(--deep-forest); border-color: var(--deep-forest) }
 .toggle--on.toggle--blue .toggle-track { background: #2563eb; border-color: #2563eb }
 .toggle--on.toggle--red .toggle-track { background: #dc2626; border-color: #dc2626 }
 .toggle--on.toggle--yellow .toggle-track { background: #f59e0b; border-color: #f59e0b }
-
 .demo-box.is-hover .toggle-track { box-shadow: 0 0 0 6px rgba(29,107,65,0.08) }
 .toggle--disabled { opacity: 0.5; cursor: not-allowed }
 .demo-box.demo-toggle { display: flex; align-items: center; justify-content: center }
@@ -178,3 +84,28 @@
 .toggle-label.left { margin-right: 8px }
 .toggle-label.right { margin-left: 8px }
 
+/* Cards layout */
+.cards-row { display: flex; flex-wrap: wrap; gap: 32px; padding: 16px 0; align-items: flex-start }
+.card-variant { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 220px; min-width: 220px }
+.card-variant .demo-box { width: auto; height: auto; min-height: unset; display: block; padding: 0; border: none; background: transparent }
+
+/* Card styles */
+.eds-card { width: 220px; border-radius: 10px; overflow: hidden; background: linear-gradient(180deg,#f8faf8,#f0fbf5); border: 1px solid rgba(29,107,65,0.06) }
+.eds-card__image { width: 100%; height: 120px; object-fit: cover; display: block }
+.eds-card__thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 12px }
+.eds-card__body { padding: 12px; color: var(--deep-forest) }
+.eds-card__body h4 { margin: 0 0 6px 0; font-size: 1rem }
+.eds-card__body p { margin: 0; font-size: 0.9rem; color: #234427 }
+.eds-card--thumb-left { display: flex; align-items: center; padding: 12px }
+.eds-card--thumb-left .eds-card__body { padding: 0 }
+.eds-card--no-image .eds-card__body { padding: 16px }
+.eds-card--hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(20,80,40,0.08); border-color: rgba(29,107,65,0.12) }
+.eds-card--active { transform: translateY(2px); border-color: rgba(29,107,65,0.18); box-shadow: none }
+.eds-card--horizontal { display: flex; gap: 12px; align-items: center; padding: 12px }
+.eds-card--horizontal .eds-card__thumb { width: 80px; height: 80px; flex-shrink: 0 }
+.eds-card--compact .eds-card__body { padding: 8px }
+.eds-card--compact .eds-card__body h4 { font-size: 0.95rem }
+.eds-card--compact .eds-card__body p { font-size: 0.8rem }
+
+/* Typography demo */
+.demo-typography p { margin: 0 }

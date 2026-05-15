@@ -11,12 +11,10 @@ const DemoStates: React.FC<{ children: React.ReactNode; demoClass?: string }> = 
         <div className={`demo-box ${demoClass ?? ''}`}>{children}</div>
         <div className="demo-label">Default</div>
       </div>
-
       <div className="demo-item">
         <div className={`demo-box ${demoClass ?? ''} is-hover`}>{children}</div>
         <div className="demo-label">Hover</div>
       </div>
-
       <div className="demo-item">
         <div
           className={`demo-box ${demoClass ?? ''} ${active ? 'is-active' : ''}`}
@@ -32,8 +30,6 @@ const DemoStates: React.FC<{ children: React.ReactNode; demoClass?: string }> = 
   )
 }
 
-
-
 const ToggleControl: React.FC<{
   size?: 'sm' | 'md' | 'lg'
   color?: 'green' | 'blue' | 'red' | 'yellow'
@@ -45,9 +41,7 @@ const ToggleControl: React.FC<{
 }> = ({ size = 'md', color = 'green', initial = false, disabled = false, label = null, labelPosition = 'right', showIndicator = false }) => {
   const [on, setOn] = useState(initial)
   const handleClick = () => { if (disabled) return; setOn((v) => !v) }
-
   const cls = `toggle toggle--${size} toggle--${color} ${on ? 'toggle--on' : ''} ${disabled ? 'toggle--disabled' : ''}`
-
   const inner = (
     <div className={cls} role="switch" aria-checked={on} onClick={handleClick} tabIndex={disabled ? -1 : 0}>
       <div className="toggle-track">
@@ -56,7 +50,6 @@ const ToggleControl: React.FC<{
       {showIndicator && <div className="toggle-indicator">{on ? 'On' : 'Off'}</div>}
     </div>
   )
-
   return (
     <div className="button-variant">
       <div className={`demo-box demo-toggle ${disabled ? 'is-disabled' : ''}`}>
@@ -70,9 +63,8 @@ const ToggleControl: React.FC<{
 }
 
 const TogglesDemo = () => (
-  <div className="component-block cards-demo">
+  <div className="component-block">
     <h4>Toggles</h4>
-
     <div className="section-row">
       <h5>State variants</h5>
       <div className="buttons-row">
@@ -87,7 +79,6 @@ const TogglesDemo = () => (
         <ToggleControl initial={false} disabled label={"Disabled"} />
       </div>
     </div>
-
     <div className="section-row">
       <h5>Size variants</h5>
       <div className="buttons-row">
@@ -96,7 +87,6 @@ const TogglesDemo = () => (
         <ToggleControl size="lg" initial={false} label="Large" />
       </div>
     </div>
-
     <div className="section-row">
       <h5>Color variants</h5>
       <div className="buttons-row">
@@ -106,7 +96,6 @@ const TogglesDemo = () => (
         <ToggleControl color="yellow" initial={true} label="Yellow" />
       </div>
     </div>
-
     <div className="section-row">
       <h5>Label variants</h5>
       <div className="buttons-row">
@@ -116,179 +105,79 @@ const TogglesDemo = () => (
         <ToggleControl showIndicator initial={true} label={null} />
       </div>
     </div>
-
   </div>
 )
 
 const CardsDemo = () => (
-  <div className="component-block">
-    <h4>Cards</h4>
-
-    <div className="section-row">
-      <h5>Image variants</h5>
-      <div className="buttons-row">
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--image-full">
-              <img src="/placeholder-400x160.png" alt="Placeholder" className="eds-card__image" />
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+    
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Image variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card"><img src="/placeholder-400x160.png" alt="Placeholder" className="eds-card__image" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Full image</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--thumb-left">
-              <img src="/placeholder-80x80.png" alt="Thumb" className="eds-card__thumb" />
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--thumb-left"><img src="/placeholder-80x80.png" alt="Thumb" className="eds-card__thumb" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Thumbnail left</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--no-image">
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--no-image"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">No image</div>
         </div>
       </div>
     </div>
 
-    <div className="section-row">
-      <h5>Content variants</h5>
-      <div className="buttons-row">
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--no-image">
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-              </div>
-            </div>
-          </div>
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Content variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--no-image"><div className="eds-card__body"><h4>Card Title</h4></div></div>
           <div className="demo-label">Title only</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--no-image">
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--no-image"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Title + description</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--no-image">
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-                <div style={{ marginTop: 8 }}>
-                  <button className="eds-btn eds-btn--primary">Action</button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--no-image"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p><div style={{ marginTop: 8 }}><button className="eds-btn eds-btn--primary">Action</button></div></div></div>
           <div className="demo-label">Title + desc + button</div>
         </div>
       </div>
     </div>
 
-    <div className="section-row">
-      <h5>State variants</h5>
-      <div className="buttons-row">
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card"> 
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>State variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Default</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box demo-card is-hover">
-            <div className="eds-card eds-card--hover"> 
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--hover"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Hover</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--active"> 
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--active"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Active</div>
         </div>
       </div>
     </div>
 
-    <div className="section-row">
-      <h5>Layout variants</h5>
-      <div className="buttons-row">
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--horizontal">
-              <img src="/placeholder-120x120.png" alt="Thumb" className="eds-card__thumb" />
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Layout variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--horizontal"><img src="/placeholder-120x120.png" alt="Thumb" className="eds-card__thumb" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Horizontal</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--vertical">
-              <img src="/placeholder-160x90.png" alt="Image" className="eds-card__image" />
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--vertical"><img src="/placeholder-160x90.png" alt="Image" className="eds-card__image" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Vertical</div>
         </div>
-
-        <div className="button-variant">
-          <div className="demo-box">
-            <div className="eds-card eds-card--compact">
-              <div className="eds-card__body">
-                <h4>Card Title</h4>
-                <p>This is a short description.</p>
-              </div>
-            </div>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <div className="eds-card eds-card--compact"><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Compact</div>
         </div>
       </div>
@@ -298,11 +187,68 @@ const CardsDemo = () => (
 )
 
 const TypographyDemo = () => (
-  <div className="component-block">
-    <h4>Typography</h4>
-    <DemoStates demoClass="demo-typography">
-      <p style={{ margin: 0 }}>The quick brown fox jumps over the lazy dog.</p>
-    </DemoStates>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>State variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, color: 'var(--deep-forest)' }}>The quick brown fox jumps over the lazy dog.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Default</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, color: 'var(--deep-forest)', textDecoration: 'underline' }}>The quick brown fox jumps over the lazy dog.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Hover</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, color: 'var(--deep-forest)', fontWeight: 'bold' }}>The quick brown fox jumps over the lazy dog.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Active / Click</span>
+        </div>
+      </div>
+    </div>
+
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Size variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-end' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontSize: '12px', color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Small</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontSize: '16px', color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Medium</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontSize: '24px', color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Large</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontSize: '32px', color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>XLarge</span>
+        </div>
+      </div>
+    </div>
+
+    <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+      <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Weight variants</h5>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontWeight: 300, color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Light</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontWeight: 400, color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Regular</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontWeight: 600, color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Semi Bold</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <p style={{ margin: 0, fontWeight: 800, color: 'var(--deep-forest)' }}>The quick brown fox.</p>
+          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Extra Bold</span>
+        </div>
+      </div>
+    </div>
   </div>
 )
 
@@ -323,6 +269,31 @@ const IconRight = () => (
 const LoadingSpinner = () => (
   <span className="spinner" aria-hidden></span>
 )
+
+const InputFieldDemo = () => {
+  const [value, setValue] = useState('')
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <div style={{ background: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+        <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>State variants</h5>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <input className="eds-input" placeholder="Type something..." />
+            <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Default</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <input className="eds-input eds-input--focus" placeholder="Focused..." />
+            <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Focus</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <input className="eds-input" placeholder="Disabled" disabled />
+            <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>Disabled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const ButtonsDemo = () => (
   <div className="component-block">
@@ -374,7 +345,7 @@ const ButtonsDemo = () => (
           <div className="demo-label">Disabled</div>
         </div>
         <div className="button-variant">
-          <div className="demo-box"><button className="eds-btn eds-btn--primary eds-btn--loading"> <LoadingSpinner/> Loading</button></div>
+          <div className="demo-box"><button className="eds-btn eds-btn--primary eds-btn--loading"><LoadingSpinner/> Loading</button></div>
           <div className="demo-label">Loading</div>
         </div>
       </div>
@@ -421,11 +392,11 @@ const ButtonsDemo = () => (
     </div>
   </div>
 )
+
 const ComponentsPage: React.FC = () => {
   const [selected, setSelected] = useState('Buttons')
 
   const renderContent = () => {
-    // Conditionally render only the selected category
     switch (selected) {
       case 'Buttons':
         return <ButtonsDemo />
