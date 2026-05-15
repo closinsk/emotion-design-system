@@ -6,6 +6,8 @@ import Navbar from './components/organisms/Navbar'
 import Hero from './components/organisms/Hero'
 import FeatureSection from './components/organisms/FeatureSection'
 import ComponentsPage from './pages/ComponentsPage'
+import DocsPage from './pages/DocsPage'
+import ReleasesPage from './pages/ReleasesPage'
 import ThemeToggle from './components/atoms/ThemeToggle'
 import TextStyleToggle from './components/atoms/TextStyleToggle/TextStyleToggle'
 
@@ -77,6 +79,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/components" element={<ComponentsPage />} />
+        <Route path="/docs" element={<DocsPage />} />
+        <Route path="/releases" element={<ReleasesPage />} />
       </Routes>
     </>
   )

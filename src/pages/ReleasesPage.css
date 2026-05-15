@@ -1,0 +1,34 @@
+@import '../components/tokens/variables.css';
+
+.releases-page { padding: 40px 0 64px }
+
+.releases-header { margin-bottom: 36px }
+.releases-title { margin: 0 0 8px; color: var(--deep-forest); font-size: var(--font-size-display) }
+.releases-subtitle { margin: 0; color: var(--color-text-muted); font-size: var(--font-size-base) }
+
+.releases-list { display: flex; flex-direction: column; gap: 0 }
+
+.releases-entry { display: flex; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--color-border) }
+.releases-entry:last-child { border-bottom: none }
+
+.releases-entry__meta { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 130px; padding-top: 4px }
+.releases-entry__date { font-size: 0.82rem; color: var(--color-text-muted) }
+
+.releases-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 10px; border-radius: 9999px }
+.releases-tag--major { background: var(--deep-forest); color: var(--color-on-primary) }
+.releases-tag--minor { background: var(--fern-leaf-green); color: var(--deep-forest) }
+.releases-tag--patch { background: var(--color-surface); color: var(--deep-forest); border: 1px solid var(--color-border) }
+.releases-tag--beta { background: var(--sunlight-petal); color: var(--deep-forest) }
+
+.releases-entry__body { flex: 1 }
+.releases-entry__version { margin: 0 0 8px; color: var(--deep-forest); font-size: 1.4rem }
+.releases-entry__summary { margin: 0 0 20px; color: var(--color-text); line-height: 1.6 }
+
+.releases-change-group { margin-bottom: 16px }
+.releases-change-type { display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px }
+.releases-change-type--added { background: #dcfce7; color: #15803d }
+.releases-change-type--changed { background: #dbeafe; color: #1d4ed8 }
+.releases-change-type--fixed { background: #fef9c3; color: #854d0e }
+.releases-change-type--removed { background: #fee2e2; color: #b91c1c }
+
+.releases-change-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; color: var(--color-text); font-size: 0.925rem; line-height: 1.6 }

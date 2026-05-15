@@ -1,0 +1,42 @@
+@import '../components/tokens/variables.css';
+
+.docs-page { padding: 32px 0 }
+.docs-layout { display: flex; gap: 24px; align-items: flex-start }
+
+.docs-sidebar { width: 220px; background: var(--succulent-green); padding: 16px; border-radius: 12px; flex-shrink: 0 }
+.docs-sidebar ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px }
+.docs-sidebar button { width: 100%; text-align: left; padding: 12px 14px; border-radius: 8px; border: 1px solid transparent; background: transparent; cursor: pointer; color: var(--color-on-primary); font-weight: 600 }
+.docs-sidebar li.is-active button { background: rgba(29,107,65,0.12); color: var(--color-on-primary); border-color: rgba(29,107,65,0.12) }
+.docs-sidebar button:hover:not(.is-active button) { background: rgba(255,255,255,0.08) }
+
+.docs-content { flex: 1; background: var(--color-bg-main); padding: 28px; border-radius: 12px; min-height: 520px }
+
+.docs-heading { margin: 0 0 16px 0; color: var(--deep-forest); font-size: var(--font-size-lg) }
+.docs-content h3 { margin: 24px 0 10px; color: var(--deep-forest) }
+.docs-content p { margin: 0 0 14px; color: var(--color-text); line-height: 1.65 }
+
+.docs-list { padding-left: 20px; margin: 0 0 16px; color: var(--color-text); line-height: 1.8 }
+.docs-list li { margin-bottom: 4px }
+
+.docs-callout { background: var(--color-surface); border-left: 3px solid var(--succulent-green); border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 16px 0 }
+.docs-callout strong { display: block; margin-bottom: 6px; color: var(--deep-forest) }
+.docs-callout p { margin: 0; font-size: 0.925rem }
+
+.docs-code { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; overflow: auto; margin: 12px 0 20px }
+.docs-code pre { margin: 0; padding: 14px 16px; font-size: 0.875rem; font-family: var(--ff-mono, monospace); color: var(--deep-forest); white-space: pre }
+
+.docs-token-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px }
+.docs-token-row { display: flex; align-items: center; gap: 14px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 10px 14px }
+.docs-token-swatch { width: 36px; height: 36px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.06); flex-shrink: 0 }
+.docs-token-name { font-weight: 600; color: var(--deep-forest); font-size: 0.9rem }
+.docs-token-var { font-size: 0.8rem; color: var(--color-text-muted) }
+
+.docs-table-wrap { overflow-x: auto; margin-bottom: 24px }
+.docs-table { border-collapse: collapse; width: 100%; font-size: 0.9rem }
+.docs-table th { text-align: left; padding: 8px 12px; background: var(--succulent-green); color: var(--color-on-primary); font-weight: 600 }
+.docs-table td { padding: 8px 12px; border-bottom: 1px solid var(--color-border); color: var(--color-text) }
+.docs-table tr:last-child td { border-bottom: none }
+
+.docs-component-list { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px }
+.docs-component-group { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 16px 20px; min-width: 160px }
+.docs-component-group h3 { margin: 0 0 10px; color: var(--deep-forest); font-size: 0.95rem }

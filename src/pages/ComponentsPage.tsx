@@ -115,11 +115,11 @@ const CardsDemo = () => (
       <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Image variants</h5>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <div className="eds-card"><img src="/placeholder-400x160.png" alt="Placeholder" className="eds-card__image" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
+          <div className="eds-card"><img src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Placeholder" className="eds-card__image" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Full image</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <div className="eds-card eds-card--thumb-left"><img src="/placeholder-80x80.png" alt="Thumb" className="eds-card__thumb" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
+          <div className="eds-card eds-card--thumb-left"><img src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Thumb" className="eds-card__thumb" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Thumbnail left</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
@@ -169,11 +169,11 @@ const CardsDemo = () => (
       <h5 style={{ marginBottom: '16px', color: 'var(--deep-forest)' }}>Layout variants</h5>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <div className="eds-card eds-card--horizontal"><img src="/placeholder-120x120.png" alt="Thumb" className="eds-card__thumb" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
+          <div className="eds-card eds-card--horizontal"><img src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Thumb" className="eds-card__thumb" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Horizontal</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <div className="eds-card eds-card--vertical"><img src="/placeholder-160x90.png" alt="Image" className="eds-card__image" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
+          <div className="eds-card eds-card--vertical"><img src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image" className="eds-card__image" /><div className="eds-card__body"><h4>Card Title</h4><p>This is a short description.</p></div></div>
           <div className="demo-label">Vertical</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>

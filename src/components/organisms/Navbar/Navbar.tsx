@@ -17,11 +17,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   return (
     <nav className="eds-navbar" role="navigation" aria-label="Main">
       <div className="eds-container eds-navbar__inner">
+        <ul className="eds-navbar__links eds-navbar__links--left">
+          <li className="eds-navbar__item"><a className="eds-navbar__link" href="#" onClick={(e) => { e.preventDefault(); handleNav('docs') }}>Documentation</a></li>
+          <li className="eds-navbar__item"><a className="eds-navbar__link" href="#" onClick={(e) => { e.preventDefault(); handleNav('releases') }}>Releases</a></li>
+        </ul>
         <div className="eds-navbar__brand" onClick={() => handleNav('home')} style={{ cursor: 'pointer' }}>Emotion Design</div>
         <ul className="eds-navbar__links">
-          <li className="eds-navbar__item"><a className="eds-navbar__link" href="#" onClick={(e) => { e.preventDefault(); handleNav('docs') }}>Docs</a></li>
           <li className="eds-navbar__item"><a className="eds-navbar__link" href="#" onClick={(e) => { e.preventDefault(); handleNav('components') }}>Components</a></li>
-          <li className="eds-navbar__item"><a className="eds-navbar__link" href="#" onClick={(e) => { e.preventDefault(); handleNav('tokens') }}>Tokens</a></li>
         </ul>
       </div>
     </nav>

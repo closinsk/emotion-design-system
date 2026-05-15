@@ -32,8 +32,11 @@
   display: flex;
   gap: var(--spacing-sm);
   align-items: center;
-  /* ensure links sit flush inside the container and don't overflow */
   box-sizing: border-box;
+}
+
+.eds-navbar__links--left {
+  justify-content: flex-start;
 }
 
 .eds-navbar__link {
