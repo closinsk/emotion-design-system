@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
+import './components/molecules/Card/Card.css'
 import Navbar from './components/organisms/Navbar'
 import Hero from './components/organisms/Hero'
 import FeatureSection from './components/organisms/FeatureSection'
