@@ -18,11 +18,19 @@ const TextStyleToggle: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    // set data attribute for global CSS rules
+    // set data attribute for global CSS rules and apply font to body
+    if (typeof document === 'undefined') return
+
     if (font === 'default') {
       document.documentElement.removeAttribute('data-font')
-    } else {
-      document.documentElement.dataset.font = font
+      // revert to stylesheet-controlled font
+      document.body.style.fontFamily = ''
+    } else if (font === 'serif') {
+      document.documentElement.dataset.font = 'serif'
+      document.body.style.fontFamily = 'Georgia, serif'
+    } else if (font === 'mono') {
+      document.documentElement.dataset.font = 'mono'
+      document.body.style.fontFamily = 'Courier New, monospace'
     }
   }, [font])
 
