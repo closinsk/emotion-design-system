@@ -39,6 +39,14 @@
   display: block;
 }
 
+.eds-card__media--large {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
 /* Flippable card styles */
 .eds-card--flippable .eds-card__flip {
   position: relative;
@@ -87,6 +95,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Mint variant for text cards */
+.eds-card--mint {
+  background: #eaf8f0; /* pale mint */
+  border: 1px solid rgba(29,107,65,0.06);
 }
 
 /* ensure the inner content (image paragraph) shows above the back when not flipped */
