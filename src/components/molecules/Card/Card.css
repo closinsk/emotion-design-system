@@ -41,9 +41,20 @@
 
 .eds-card__media--large {
   width: 100%;
-  height: 280px;
+  height: 300px;
+  max-height: 300px;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 0;
+  display: block;
+}
+
+/* Ensure image cards always constrain the image size and crop overflow */
+.eds-card--image-large .eds-card__media--large {
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
   display: block;
 }
 
