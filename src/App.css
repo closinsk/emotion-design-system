@@ -189,6 +189,36 @@
   }
 }
 
+/* Card row layout used on the demo page */
+.eds-card-row {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+.eds-card-row__col {
+  flex: 1 1 50%;
+}
+
+.eds-card__media--solid {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #cfead8, #a9d7b8);
+}
+
+@media (max-width: 1024px) {
+  .eds-card-row { flex-direction: column }
+}
+
+/* Column of stacked image cards */
+.eds-card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.eds-card-column__item { width: 100% }
+
 .ticks {
   position: relative;
   width: 100%;
