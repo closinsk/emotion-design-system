@@ -107,7 +107,7 @@
 }
 
 .components-page .cards-demo .button-variant { display: flex; flex-direction: column; gap: 8px; align-items: stretch }
-.components-page .cards-demo .demo-box { width: auto; height: auto; padding: 0; display: flex; align-items: stretch; justify-content: center; position: static !important; overflow: visible }
+.components-page .cards-demo .demo-box { width: auto; height: auto; padding: 0; display: block; align-items: stretch; justify-content: center; position: static !important; overflow: visible }
 
 /* Explicit per-card sizing and spacing to avoid overlap */
 .components-page .cards-demo .eds-card {
@@ -123,6 +123,10 @@
 	background: linear-gradient(180deg,#f8faf8,#f0fbf5);
 }
 .components-page .cards-demo .eds-card__body { padding: 0 }
+
+/* Ensure each card behaves as a block in the flex-wrap container */
+.components-page .cards-demo .button-variant { flex: 0 0 auto }
+.components-page .cards-demo .eds-card { display: flex; flex-direction: column; justify-content: flex-start }
 
 .components-page .cards-demo .section-row { margin-bottom: 24px }
 
