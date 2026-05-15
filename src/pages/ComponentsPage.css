@@ -98,16 +98,31 @@
 
 /* Cards layout grid overrides to prevent overlap */
 .components-page .cards-demo .buttons-row {
-	display: grid !important;
-	grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+	/* Use a wrapping flex container so each card has explicit sizing and spacing */
+	display: flex !important;
+	flex-wrap: wrap !important;
 	gap: 24px !important;
-	align-items: start;
+	padding: 24px 0 !important;
+	align-items: flex-start;
 }
 
 .components-page .cards-demo .button-variant { display: flex; flex-direction: column; gap: 8px; align-items: stretch }
-.components-page .cards-demo .demo-box { width: 100%; height: auto; padding: 0; display: flex; align-items: stretch; justify-content: center }
-.components-page .cards-demo .eds-card { width: 100%; min-width: 220px; box-sizing: border-box }
-.components-page .cards-demo .eds-card__body { padding: 16px }
+.components-page .cards-demo .demo-box { width: auto; height: auto; padding: 0; display: flex; align-items: stretch; justify-content: center; position: static !important; overflow: visible }
+
+/* Explicit per-card sizing and spacing to avoid overlap */
+.components-page .cards-demo .eds-card {
+	width: 200px !important;
+	min-height: 150px !important;
+	margin: 16px !important;
+	padding: 16px !important;
+	border: 1px solid #ccc !important;
+	border-radius: 8px !important;
+	box-sizing: border-box !important;
+	position: static !important;
+	z-index: auto !important;
+	background: linear-gradient(180deg,#f8faf8,#f0fbf5);
+}
+.components-page .cards-demo .eds-card__body { padding: 0 }
 
 .components-page .cards-demo .section-row { margin-bottom: 24px }
 
