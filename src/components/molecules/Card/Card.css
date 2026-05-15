@@ -43,9 +43,17 @@
   width: 100%;
   height: 280px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0;
   display: block;
 }
+
+/* Make image cards full-bleed: remove padding so the image touches the card edges */
+.eds-card--image-large {
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+.eds-card--image-large .eds-card__body { padding: 0 }
 
 /* Flippable card styles */
 .eds-card--flippable .eds-card__flip {
