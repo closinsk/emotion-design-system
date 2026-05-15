@@ -17,14 +17,14 @@ const CardWithImageAndButton: React.FC = () => {
   return (
     <Card title="Image + Button Card" footer={<DownloadButton href={heroImg} download="hero.png">Download</DownloadButton>} className="eds-card--flippable">
       <div
-        className={`eds-card__flip ${flipped ? 'is-flipped' : ''}`}
+        className={`eds-card__flip`}
         onClick={toggle}
         onKeyDown={onKey}
         role="button"
         tabIndex={0}
         aria-pressed={flipped}
       >
-        <div className="eds-card__flip-inner">
+        <div className={`eds-card__flip-inner ${flipped ? 'is-flipped' : ''}`}>
           <div className="eds-card__face eds-card__face--front">
             <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
               <img src={heroImg} alt="plant" className="eds-card__media" />
