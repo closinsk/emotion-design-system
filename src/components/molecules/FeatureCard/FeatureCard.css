@@ -1,0 +1,70 @@
+@import '../../tokens/variables.css';
+
+.feature-card {
+  background: var(--sunlight-petal);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.feature-card.is-hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-card);
+}
+
+.feature-card__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.feature-card__title {
+  margin: 0;
+  font-size: var(--fs-xl);
+  color: var(--succulent-green);
+  font-weight: var(--fw-medium);
+}
+
+.feature-card__desc {
+  margin: 0;
+  color: var(--color-text-main);
+}
+
+.feature-card__extra {
+  margin-top: var(--spacing-sm);
+  color: var(--color-text-main);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease, opacity 220ms ease;
+  opacity: 0;
+}
+
+.feature-card.is-expanded .feature-card__extra {
+  max-height: 160px;
+  opacity: 1;
+}
+
+.feature-card__arrow {
+  margin-top: var(--spacing-sm);
+  align-self: center;
+  color: var(--deep-forest);
+  transition: transform 240ms ease;
+  display: flex;
+  align-items: center;
+}
+
+.feature-card.is-expanded .feature-card__arrow {
+  transform: rotate(180deg);
+}
+
+/* Focus styles for keyboard users */
+.feature-card:focus-visible {
+  outline: 3px solid rgba(29,107,65,0.12);
+  outline-offset: 3px;
+}

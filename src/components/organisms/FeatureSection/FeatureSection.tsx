@@ -1,5 +1,6 @@
 import React from 'react';
 import './FeatureSection.css';
+import FeatureCard from '../../molecules/FeatureCard/FeatureCard'
 
 const FeatureSection: React.FC = () => {
   return (
@@ -14,8 +15,10 @@ const FeatureSection: React.FC = () => {
         </div>
 
         <div className="eds-feature-section__copy">
-          <h3 id="feature-title" className="eds-feature-section__title">Natural Systems, Thoughtful Interfaces</h3>
-          <p className="eds-feature-section__text">We craft components that feel grounded and breathe—built with tokens, intention, and accessible defaults so your UI can grow sustainably.</p>
+          <FeatureCard
+            title="Natural Systems, Thoughtful Interfaces"
+            description="We craft components that feel grounded and breathe—built with tokens, intention, and accessible defaults so your UI can grow sustainably."
+          />
         </div>
       </div>
     </section>
