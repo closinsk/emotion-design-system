@@ -56,7 +56,7 @@ body.eds-theme-transition-capable {
 
 :root[data-theme='dark'] {
   --color-bg-main: #0f1724;
-  --color-text-main: #f3f4f6;
+  --color-text-main: #111827; /* use black text in dark mode per request */
   --succulent-green: var(--color-primary-dark);
 }
 
@@ -138,7 +138,7 @@ body {
 
 :root[data-theme='green'] {
   --color-bg-main: #1e4d2b; /* darker green background */
-  --color-text-main: #ffffff; /* white text for readability */
+  --color-text-main: #111827; /* use black text in green mode per request */
   --succulent-green: #2d5a27;
 }
 
