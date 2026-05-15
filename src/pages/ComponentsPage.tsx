@@ -72,18 +72,15 @@ const ComponentsPage: React.FC = () => {
   const [selected, setSelected] = useState('Buttons')
 
   const renderContent = () => {
-    switch (selected) {
-      case 'Buttons':
-        return <ButtonsDemo />
-      case 'Toggles':
-        return <TogglesDemo />
-      case 'Cards':
-        return <CardsDemo />
-      case 'Typography':
-        return <TypographyDemo />
-      default:
-        return null
-    }
+    // Show all components by default in a full list, but the sidebar still highlights a selection
+    return (
+      <>
+        <ButtonsDemo />
+        <TogglesDemo />
+        <CardsDemo />
+        <TypographyDemo />
+      </>
+    )
   }
 
   return (
