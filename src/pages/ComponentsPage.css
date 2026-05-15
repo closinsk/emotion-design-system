@@ -107,14 +107,14 @@
 	align-content: flex-start; /* ensure rows align at top and reserve vertical space */
 }
 
-.components-page .cards-demo .button-variant { display: flex; flex-direction: column; gap: 8px; align-items: stretch }
+.components-page .cards-demo .button-variant { display: flex; flex-direction: column; gap: 8px; align-items: stretch; width: 200px; flex: 0 0 auto; margin: 0 }
 .components-page .cards-demo .demo-box { width: auto; height: auto; padding: 0; display: block; align-items: stretch; justify-content: center; position: static !important; overflow: visible }
 
 /* Explicit per-card sizing and spacing to avoid overlap */
 .components-page .cards-demo .eds-card {
-	width: 200px !important;
+	width: 100% !important;
 	min-height: 150px !important;
-	margin: 16px !important;
+	/* removed margin to rely on flex gap */
 	padding: 16px !important;
 	border: 1px solid #ccc !important;
 	border-radius: 8px !important;
